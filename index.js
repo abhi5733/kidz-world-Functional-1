@@ -29,11 +29,13 @@ sum+= +paragraphText.slice(1)
 // show Total
 
 function showTotal(){
-
+let orderDetails = ""
     for (let keys in obj){
-        console.log(`Item Name:${keys}-Quantity:${obj[keys]}`)
+        orderDetails += ` ${keys} - : ${obj[keys]} `
     }
 
-    console.log(`The Total Amount is ${Math.floor(sum)}$ and ${Math.floor(100*(sum-Math.floor(sum)))}cents`)
+ window.location.href = `https://api.whatsapp.com/send/?phone=7083041314&text=Order Details : ${orderDetails} , The Total Amount is ${Math.floor(sum)}$ and ${Math.floor(100*(sum-Math.floor(sum)))}cents!&type=phone_number&app_absent=0`
+ 
+    
 
 }
